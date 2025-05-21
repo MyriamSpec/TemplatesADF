@@ -30,7 +30,7 @@
         "Server_Username": {
             "type": "string",
             "defaultValue": "JiraCloudServer"
-        }
+        },
         "DataBase_Password": {
             "type": "secureString",
             "metadata": "Chaîne sécurisée pour « password » de « JiraDB »"

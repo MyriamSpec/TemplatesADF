@@ -2,28 +2,28 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "factoryName": {
+        "datafactoryName": {
             "value": "JiraCloudDataFact"
         },
-        "JiraAPI_password": {
+        "JiraAPI_token": {
             "value": ""
         },
-        "JiraDB_password": {
+        "DataBase_password": {
             "value": ""
         },
-        "JiraAPI_properties_typeProperties_url": {
+        "Jira_BaseUrl": {
             "value": "https://spectrumgroupe-team-dlggvk9h.atlassian.net/"
         },
-        "JiraAPI_properties_typeProperties_userName": {
+        "Jira_Username": {
             "value": "myriam.benazzoun@spectrumgroupe.fr"
         },
-        "JiraDB_properties_typeProperties_server": {
+        "server_name": {
             "value": "jiracloudsqlserver.database.windows.net"
         },
-        "JiraDB_properties_typeProperties_database": {
+        "database_name": {
             "value": "JiraCloudDB"
         },
-        "JiraDB_properties_typeProperties_userName": {
+        "database_username": {
             "value": "JiraCloudServer"
         }
     }

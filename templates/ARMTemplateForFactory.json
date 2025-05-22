@@ -2182,28 +2182,7 @@
             ]
         },
         
-        {
-            "name": "[concat(parameters('DatafactoryName'), '/JiraDB')]",
-            "type": "Microsoft.DataFactory/factories/linkedServices",
-            "apiVersion": "2018-06-01",
-            "properties": {
-                "annotations": [],
-                "type": "AzureSqlDatabase",
-                "typeProperties": {
-                    "server": "[parameters('server_name')]",
-                    "database": "[parameters('database_name')]",
-                    "encrypt": "mandatory",
-                    "trustServerCertificate": false,
-                    "authenticationType": "SQL",
-                    "userName": "[parameters('database_username')]",
-                    "password": {
-                        "type": "SecureString",
-                        "value": "[parameters('DataBase_password')]"
-                    }
-                }
-            },
-            "dependsOn": []
-        },
+      
         {
             "name": "[concat(parameters('DatafactoryName'), '/Board_DF')]",
             "type": "Microsoft.DataFactory/factories/dataflows",

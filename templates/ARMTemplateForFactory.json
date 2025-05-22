@@ -50,6 +50,40 @@
     },
     "properties": {}
   }, 
+         {
+    "type": "Microsoft.DataFactory/factories/linkedservices",
+    "apiVersion": "2018-06-01",
+    "name": "[concat(parameters('DatafactoryName'), '/JiraAPI')]",
+    "properties": {
+      "type": "RestService",
+      "typeProperties": {
+        "url": "[parameters('Jira_BaseUrl')]",
+        "enableServerCertificateValidation": true,
+        "authenticationType": "Basic",
+        "userName": "[parameters('Jira_Username')]",
+        "password": "[parameters('Jira_Token')]"
+      },
+      "annotations": []
+    },
+    "dependsOn": [
+      "[resourceId('Microsoft.DataFactory/factories', parameters('DatafactoryName'))]"
+    ]
+  },
+  {
+    "type": "Microsoft.DataFactory/factories/linkedservices",
+    "apiVersion": "2018-06-01",
+    "name": "[concat(parameters('DatafactoryName'), '/JiraDB')]",
+    "properties": {
+      "type": "AzureSqlDatabase",
+      "typeProperties": {
+        "connectionString": "[concat('Server=tcp:', parameters('server_name'), ';Database=', parameters('database_name'), ';User ID=', parameters('database_username'), ';Password=', parameters('DataBase_password'), ';Encrypt=true;TrustServerCertificate=false;')]"
+      },
+      "annotations": []
+    },
+    "dependsOn": [
+      "[resourceId('Microsoft.DataFactory/factories', parameters('DatafactoryName'))]"
+    ]
+  },
         {
             "name": "[concat(parameters('DatafactoryName'), '/DWH')]",
             "type": "Microsoft.DataFactory/factories/pipelines",

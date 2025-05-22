@@ -40,6 +40,16 @@
         "factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('DatafactoryName'))]"
     },
     "resources": [
+       {
+    "type": "Microsoft.DataFactory/factories",
+    "apiVersion": "2018-06-01",
+    "name": "[parameters('DatafactoryName')]",
+    "location": "[resourceGroup().location]",
+    "identity": {
+      "type": "SystemAssigned"
+    },
+    "properties": {}
+  }, 
         {
             "name": "[concat(parameters('DatafactoryName'), '/DWH')]",
             "type": "Microsoft.DataFactory/factories/pipelines",
